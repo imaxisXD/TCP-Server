@@ -1,5 +1,5 @@
 # TCP-Server
-
+<pre>
 TCP Server application that listens on port 8080 for GET and POST methods
 Create a TCP server with the following capabilities/features
 ● Runs on port 8080
@@ -19,9 +19,11 @@ support other methods too, it is your choice. In case you do not wish to
 support other methods, do the following.
     ■ In Terminal display 'We are not supporting '
     ■ Respond with HTTP 400 Code
+</pre>
 ## Working
-![Run demo](demo/node install.gif)
-![Working Demo](demo/final working.gif)
+![node instal](https://user-images.githubusercontent.com/56172425/110287035-e599f580-800b-11eb-937b-1c649f42ebc3.gif)
+![final working](https://user-images.githubusercontent.com/56172425/110287088-f8acc580-800b-11eb-8555-0208be82fbc8.gif)
+
 
 ## Requirment
 Node js version 15
