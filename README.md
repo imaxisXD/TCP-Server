@@ -21,7 +21,10 @@ support other methods, do the following.
     ■ Respond with HTTP 400 Code
 </pre>
 ## Working
+### Node install
 ![node instal](https://user-images.githubusercontent.com/56172425/110287035-e599f580-800b-11eb-937b-1c649f42ebc3.gif)
+#### -----------------------------------------------------------------------------------------------------------------
+### Demo
 ![final working](https://user-images.githubusercontent.com/56172425/110287088-f8acc580-800b-11eb-8555-0208be82fbc8.gif)
 
 
