@@ -1,7 +1,7 @@
 import net from "net"; //imported net libraray
 
-const PORT = 8080;// Defined port 8080
-const Server = net.createServer();// Created the tcp server
+const PORT = 8080; // Defined port 8080
+const Server = net.createServer(); // Created the tcp server
 
 Server.on("listening", () => console.log("Listening on port: " + PORT));
 
@@ -11,9 +11,9 @@ Server.on("connection", function handleConnection(socket) {
 	});
 
 	socket.on("data", function handleData(data) {
-		const request = data.toString().split("\n");
+		const request = data.toString().split("\n"); // To split data into array 
 		// console.log(request); For debugging purpose enable this
-		const method = request[0].split("/")[0].trim();
+		const method = request[0].split("/")[0].trim(); // 0th elemnt of array contains request header
 		// console.log(method); For debugging purpose enable this
 		socket.write(
 			["HTTP/1.1 200 OK", "Content-Type: text/html; charset=UTF-8", "Content-Encoding: UTF-8", "Accept-Ranges: bytes", "Connection: keep-alive"].join(
@@ -28,10 +28,11 @@ Server.on("connection", function handleConnection(socket) {
 		// If any other method is called then return HTTP 400 code
 		else {
 			console.log(`We are not supporting ${method} method`);
-			socket.write(`<h1>HTTP 400 Code</h1><h2>We are not supporting ${method} method<h2>`)}
+			socket.write(`<h1>HTTP 400 Code</h1><h2>We are not supporting ${method} method<h2>`)
+		}
 		socket.end();
 	});
-
+	// To check for error while closing socket
 	socket.on("close", function closeSocket(err) {
 		if (err) {
 			throw new Error("SOCKET ERROR");
@@ -41,12 +42,13 @@ Server.on("connection", function handleConnection(socket) {
 			socket.destroy();
 		}
 	});
+	// Used for session timeout
 	socket.setTimeout(20 * 60 * 1000, () => console.log("Timeout Reached"));
 	socket.on("timeout", function handleTimeout() {
 		console.log("Session Timeout");
 		socket.end();
 	});
-	
+
 });
 
 Server.listen(PORT);
