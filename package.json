@@ -1,0 +1,11 @@
+{
+	"name": "tcp-server",
+	"version": "1.0.0",
+	"description": "TCP Server application that listens on port 8080 for GET and POST methods",
+	"main": "index.mjs",
+	"scripts": {
+		"start": "node index.mjs"
+	},
+	"author": "",
+	"license": "ISC"
+}
